@@ -370,7 +370,7 @@ a.navbar-brand {
 }
 
 a.navbar-brand img {
-    height: 55px;
+    height: 70px;
 }
 
 .top-header .navbar .navbar-collapse ul li a.active {}
@@ -483,7 +483,7 @@ a.navbar-brand img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #111;
+	background: rgb(107, 143, 197);
 }
 
 .search-txt {
