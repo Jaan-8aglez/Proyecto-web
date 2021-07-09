@@ -40,16 +40,16 @@
 
 <body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-    <!-- LOADER -->
-    <div id="preloader">
+   
+     <!-- LOADER -->
+     <div id="preloader">
         <div class="loader">
             <img src="images/loa2.gif" alt="#" />
         </div>
     </div>
     <!-- end loader -->
     <!-- END LOADER -->
-
-    <!-- Start header -->
+   
     <header class="top-header">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container-fluid">
@@ -63,9 +63,8 @@
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="index.html">Inicio</a></li>
                         <li><a class="nav-link" href="about.html">Saber más</a></li>
-                        <li><a class="nav-link" href="cursos.php">Cursos</a></li>
-                        <li><a class="nav-link" href="reaserch.html">Inscripción</a></li>
-										
+                        <li><a class="nav-link" href="contact.html">Contacto</a></li>
+						<li><a class="nav-link" href="reaserch.html">Inscripción</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
@@ -77,9 +76,7 @@
             </div>
         </nav>
     </header>
-    <!-- End header -->
-
-	<!-- section -->
+    <!-- section -->
 	
 	<section class="inner_banner">
 	  <div class="container">
@@ -87,7 +84,7 @@
 		      <div class="col-12">
 			    <div class="full">
                         <div class="heading_main text_align_center">
-
+						
                         </div>
 					  </div>
 			  </div>
@@ -104,59 +101,139 @@
                 <div class="col-md-12">
                     <div class="full">
                         <div class="heading_main text_align_center">
-						   <h2><span>Contacto</span></h2>
+						   <h2><span>Cursos</span></h2>
                         </div>
 					  </div>
                 </div>
 			  </div>
            </div>
         </div>
-    <div class="section layout_padding contact_section" style="background:#f6f6f6;">
-        <div class="container">
-               <div class="row">
-                 <div class="col-lg-8 col-md-8 col-sm-12">
-				    <div class="full float-right_img">
-                      <a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank">  <img  src="images/mapa.png" alt="#" > </a>
-                    </div>
-                 </div>
-				 <div class="col-lg-4 col-md-4 col-sm-12">
-				    <div class="contact_form">
-					    <form action="contact.html">
-						
-						   <fieldset style ="background-color:#002147; width: 110%; padding: 25% 7% 50%; font-weight:; color: white;	">
-						   	    <div class="full field" >
-							    <li><img src="images/i5.png" alt="#" ><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank" style="font-weight:; color: white;"><span class="icon"></span><span>    Centro de Cómputo, primer piso , Campo Cuatro, Carretera Cuautitlán-Teoloyucan Km. 2.5, Col. San Sebastián Xhala, Cuautitlán Izcalli, Estado de México, CP. 54714</span></a></li>
-								<br>
-								<br>
-								<li><img src="images/i6.png">cursos.computo@cuautitlan.unam.mx</li>
-								<br>
-								<br>
-								<li><img src="images/i7.png"><span>56-23-18-79</span></li>
-							   </div>
-							
-						   </fieldset>
-						</form>
-					</div>
-                 </div>
-               </div>			  
-           </div>
-        </div>
-	<!-- end section -->
-    <!-- Start Footer -->
-    <footer class="footer-box">
+	
+        
+        <div style="text-align:center;">
+<table style="margin: 0 auto;" BORDER CELLPADDING=10 CELLSPACING=0>
+    <tr bgcolor="#002147" style="color:white" ;>
+      <td> Nombre del Curso</td>
+      <td> Requisitos</td>
+      <td>Costo</td>
+      <td>Profesor</td>
+      <td>Horario</td>
+      <td>Grupo</td>
+      <td>Sala</td>
+      <td>Fecha Inicio</td>
+    </tr>
+    <?php
+        include "conexion.php";
+        $sql="SELECT * from cursos";
+        $result= mysqli_query($conexion,$sql);
+        while ($mostrar=mysqli_fetch_array($result)){
+    ?>
+    <tr bgcolor="white" onmouseover="this.style.background='#ece8d9';" onmouseout="this.style.background='#095a83'.color='white';">
+      <td> <?php echo $mostrar ['nombre']  ?>  </td>
+      <td> <?php echo $mostrar ['requisitos'] ?>  </td>
+      <td> <?php echo $mostrar ['costo'] ?> </td>
+      <td> <?php echo $mostrar ['matricula_profesor'] ?>  </td>
+      
+      <td> <?php echo $mostrar['dia']. '<br>'.$mostrar ['hora_inicio'].'-'. $mostrar['hora_fin']?>  </td>
+      <td> <?php echo $mostrar ['grupo'] ?> </td>
+      <td> <?php echo $mostrar ['sala']?> </td>
+      <td> <?php echo $mostrar ['fecha_inicio'] ?>  </td>
+
+    </tr>
+
+<?php
+        }
+?>
+
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer-box">
         <div class="container">
 		
 		   <div class="row">
 		   
 		      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-			     <div class="footer_blog">
+			     <div class="footer_blog footer_menu white_fonts">
 				    <h3>Aviso de Privacidad</h3>
 					 <div class="full white_fonts">
 					    <p>
-							Esta página puede ser reproducida con fines no lucrativos, 
-							siempre y cuando no se mutile, se cite la fuente completa 
-							y su dirección electrónica. De otra forma requiere permiso previo 
-							por escrito de la institución. </p>
+                        Esta página puede ser reproducida con fines no lucrativos, 
+                        siempre y cuando no se mutile, se cite la fuente completa 
+                        y su dirección electrónica. De otra forma requiere permiso previo 
+                        por escrito de la institución. </p>
 					 </div>
 				 </div>
 			  </div>
@@ -165,23 +242,23 @@
 			       <div class="footer_blog footer_menu white_fonts">
 						    <h3>Menú Rapido</h3>
 						    <ul> 
-								<li><a href="#">> Cursos</a></li>
-								<li><a href="#">> Temarios</a></li>
-								<li><a href="#">> Tramites</a></li>
-								<li><a href="#">> Eventos</a></li>
-								<li><a href="contact.html">> Contacto</a></li>
+							  <li><a href="#">> Cursos</a></li>
+							  <li><a href="#">> Temarios</a></li>
+							  <li><a href="#">> Tramites</a></li>
+							  <li><a href="#">> Eventos</a></li>
+							  <li><a href="contact.html">> Contacto</a></li>
 							</ul>
 						 </div>
 				 </div>
 				 
 				 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
 				 <div class="footer_blog full white_fonts">
-					<h3>Noticias</h3>
-					<p>Suscríbete para recibir noticias de nuevos cursos de programación</p>
+						     <h3>Noticias</h3>
+							 <p>Suscríbete para recibir noticias de nuevos cursos de programación</p>
 							 <div class="newsletter_form">
 							    <form action="index.html">
 								   <input type="email" placeholder="Tu correo electrónico" name="#" required />
-								   <button>ENVIAR</button>
+								   <button>Enviar</button>
 								</form>
 							 </div>
 						 </div>
@@ -191,9 +268,9 @@
 				 <div class="footer_blog full white_fonts">
 						     <h3>Contacto</h3>
 							 <ul class="full">
-								<li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo Cuatro</span></a></li>
-								<li><img src="images/i6.png"><span>cursos.computo@cuautitlan.unam.mx</span></li>
-								<li><img src="images/i7.png"><span>56-23-18-79</span></li>
+                                <li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo Cuatro</span></a></li>
+							   <li><img src="images/i6.png"><span>cursos.computo@cuautitlan.unam.mx</span></li>
+							   <li><img src="images/i7.png"><span>56-23-18-79</span></li>
 							 </ul>
 						 </div>
 					</div>	 
@@ -214,10 +291,16 @@
         </div>
     </div>
 
-    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
 
-    <!-- ALL JS FILES -->
-    <script src="js/jquery.min.js"></script>
+
+
+
+
+
+
+
+     <!-- ALL JS FILES -->
+     <script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
