@@ -2244,3 +2244,15 @@ section.inner_banner h3 {
 	background: #fff;
 	color: #12385b;
 }
+
+/* -------- */
+
+.two-fields {
+	width:100%;
+  }
+  .two-fields .input-group {
+	width:100%;
+  }
+  .two-fields input {
+	width:50% !important;
+  }
