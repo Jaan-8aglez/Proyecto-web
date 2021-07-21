@@ -1,3 +1,17 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario'])){
+    echo '
+    <script> 
+      alert("Por favor inicia sesion para ingresar a esta página");
+      window.location = "login.html";
+    </script>
+    ';
+    session_destroy();
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -15,7 +29,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Site Icons -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="apple-touch-icon" href="#" />
@@ -63,17 +78,17 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li><a class="nav-link" href="about.html">Saber más</a></li>
-                        <li><a class="nav-link" href="courses.html">Cursos</a></li>
-                        <li><a class="nav-link" href="reaserch.html">Inscripción</a></li>
-                        <li><a class="nav-link" href="contact.html">Contacto</a></li>
-                        <li><a class="nav-link" href="#">Cuenta</a></li>
+                        <li><a class="nav-link" href="sabermas.html">Saber más</a></li>
+                        <li><a class="nav-link" href="cursos.php">Cursos</a></li>
+                        <li><a class="nav-link" href="tramite.html">Inscripción</a></li>
+						<li><a class="nav-link" href="contacto.html">Contacto</a></li>
+						<li><a class="nav-link" href="login.html">Iniciar sesión</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
-                    <input type="text" class="search-txt" placeholder="Search">
-                    <a class="search-btn">
-                        <img src="images/search_icon.png" alt="#" />
+                    <input type="text" class="search-txt" placeholder="Buscar">
+                    <a class="">
+                        <span class="fa fa-search" style="font-size: 20px; margin-top: 15px;" styaria-hidden="true"></span>
                     </a>
                 </div>
             </div>
@@ -99,7 +114,7 @@
 
     <!-- section -->
     <div class="row">
-        <div class="full center">
+        <div class="full center mt-4">
             <h4>86132000 Concepto: Servicios de Educación y Capacitación en Administración</h4>
         </div>
         <div class="full center">
@@ -127,15 +142,7 @@
                                 </div>
 
                                 <div class="full field">
-                                    <select style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 60px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px;
-                                    border: 2px dotted #999;" name="Periodo" >
+                                    <select class="select" name="Periodo" >
 
                                         <option selected>Periodo / Fecha de Inicio</option>
 
@@ -231,17 +238,9 @@
 
 
                                 <div class="full field">
-                                    <select id="slec" style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 60px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px;
-                                    border: 2px dotted #999;" name="Periodo" >
+                                    <select id="slec" class="select" name="Periodo" >
 
-                                        <option selected>Carrera (SOLO FES CUAUTITLÁN)</option>
+                                        <option selected>Carrera (SOLO INTERNOS)</option>
 
                                         <option>Informatica</option>
                                         
@@ -253,19 +252,11 @@
                                 </div>
 
                                 <div class="">
-                                    <input type="number" id="slecc" placeholder="Numero de Cuenta (SOLO FES CUAUTITLÁN)" name="your name" style="border: 2px dotted #999" />
+                                    <input type="number" id="slecc" placeholder="Numero de Cuenta (SOLO INTERNOS)" name="your name" style="border: 2px dotted #999" />
                                 </div>
 
                                 <div class="full field">
-                                    <select style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 60px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px;
-                                    border: 2px dotted #999;" name="Periodo" >
+                                    <select class="select" name="Periodo" >
 
                                         <option selected>Grado Academico (SOLO EXTERNOS)</option>
 
@@ -375,6 +366,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script>
     <script src="js/slider-index.js"></script>

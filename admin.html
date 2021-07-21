@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>REGISTRO</title>
+	<title>MANAGER</title>
 	<link rel="shortcut icon" href="images/unam-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="css/login.css"/>
@@ -11,48 +11,28 @@
 </head>
 <body>
 <div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="registro.php" method="POST">
-			<h1 class="head-registro">Crear Cuenta</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>o use su correo electrónico para registrarse</span>
-            <input type="text" name="nombre" placeholder="Nombre" />
-            <input type="cuenta" name="cuenta" placeholder="Matricula" />
-			<input type="email" name="email" placeholder="Email" />
-			<input type="password" name="contraseña" placeholder="Contraseña" />
-			<button class="ingresar">Ingresar</button>
-		</form>
-	</div>
+	
 	<div class="form-container sign-in-container">
-		<form action="acceso.php" method="POST">
-			<h1 class="head-registro" style="margin-bottom: 10px;">Registrarse</h1>
+		<form action="acceso-admin.php" method="POST">
+			<h1 class="head-registro" style="margin-bottom: 10px;">Manager</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
-			<span>o registrate con tu correo</span>
-			<input type="email" name="email" placeholder="Email" />
+			<span>o registrate con tu usuario</span>
+			<input type="usuario" name="usuario" placeholder="Usuario" />
 			<input type="password" name="contraseña" placeholder="Contraseña" />
 			<a href="#">Olvidaste tu contraseña?</a>
 			<button>Iniciar sesión</button>
 		</form>
 	</div>
 	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Bienvenido!</h1>
-				<p>Para poder inscribirte, inicia sesión con tus datos</p>
-				<button class="ghost" id="signIn">Iniciar sesión</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>¿No tienes una cuenta?</h1>
-				<p>Ingrese sus datos para poder inscribirse</p>
-				<button class="ghost" id="signUp">Registrarse</button>
+		<div class="overlay" >
+			<div class="overlay-panel overlay-right" style="background-color: #1c3b71;">
+				<h1>Bienvenido admin!</h1>
+				<p>Ingrese sus datos para poder acceder</p>
+				<img src="images/logo-cuauti.JPG" alt="" style="width: 100%; height: 50%; border-radius: 10px;">
 			</div>
 		</div>
 	</div>

@@ -15,7 +15,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Site Icons -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="apple-touch-icon" href="#" />
@@ -31,10 +32,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -50,6 +47,7 @@
     <!-- end loader -->
     <!-- END LOADER -->
    
+    <!-- Start header -->
     <header class="top-header">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container-fluid">
@@ -62,22 +60,25 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li><a class="nav-link" href="about.html">Saber más</a></li>
-                        <li><a class="nav-link" href="contact.html">Contacto</a></li>
-						<li><a class="nav-link" href="reaserch.html">Inscripción</a></li>
+                        <li><a class="nav-link" href="sabermas.html">Saber más</a></li>
+                        <li><a class="nav-link" href="cursos.php">Cursos</a></li>
+                        <li><a class="nav-link" href="login.html">Inscripción</a></li>
+						<li><a class="nav-link" href="contacto.html">Contacto</a></li>
+						<li><a class="nav-link" href="login.html">Iniciar sesión</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
                     <input type="text" class="search-txt" placeholder="Buscar">
-                    <a class="search-btn">
-                        <img src="images/search_icon.png" alt="#" />
+                    <a class="">
+                        <span class="fa fa-search" style="font-size: 20px; margin-top: 15px;" styaria-hidden="true"></span>
                     </a>
                 </div>
             </div>
         </nav>
     </header>
+    <!-- End header -->
+    
     <!-- section -->
-	
 	<section class="inner_banner">
 	  <div class="container">
 	      <div class="row">
@@ -95,7 +96,7 @@
 	<!-- end section -->
    
 	<!-- section -->
-	 <div class="section layout_padding padding_bottom-0">
+	<div class="section layout_padding padding_bottom-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -103,18 +104,18 @@
                         <div class="heading_main text_align_center">
 						   <h2><span>Cursos</span></h2>
                         </div>
-					  </div>
+					</div>
                 </div>
-			  </div>
-           </div>
+			</div>
         </div>
+    </div>
 	
         
-        <div style="text-align:center;">
+<div style="text-align:center;">
 <table style="margin: 0 auto;" BORDER CELLPADDING=10 CELLSPACING=0>
     <tr bgcolor="#002147" style="color:white" ;>
-      <td> Nombre del Curso</td>
-      <td> Requisitos</td>
+      <td>Nombre del Curso</td>
+      <td>Requisitos</td>
       <td>Costo</td>
       <td>Profesor</td>
       <td>Horario</td>
@@ -123,7 +124,7 @@
       <td>Fecha Inicio</td>
     </tr>
     <?php
-        include "conexion.php";
+        include 'conexion.php';
         $sql="SELECT * from cursos";
         $result= mysqli_query($conexion,$sql);
         while ($mostrar=mysqli_fetch_array($result)){
@@ -146,79 +147,11 @@
 ?>
 
 </table>
+  <div class="full center">
+      <a class="contact_bt" href="formulario.php">Inscripción</a>
+  </div>
+
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <footer class="footer-box">
         <div class="container">
@@ -292,18 +225,12 @@
     </div>
 
 
-
-
-
-
-
-
-
      <!-- ALL JS FILES -->
-     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script>
     <script src="js/slider-index.js"></script>
