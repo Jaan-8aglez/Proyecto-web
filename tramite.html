@@ -15,8 +15,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Site Icons -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="apple-touch-icon" href="#" />
@@ -32,23 +32,25 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
 
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
 <body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-   
-     <!-- LOADER -->
-     <div id="preloader">
+    <!-- LOADER -->
+    <div id="preloader">
         <div class="loader">
             <img src="images/loa2.gif" alt="#" />
         </div>
     </div>
-    <!-- end loader -->
     <!-- END LOADER -->
-   
-    <!-- Start header -->
-    <header class="top-header">
+
+     <!-- Start header -->
+	 <header class="top-header">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"><img src="images/logo-unam.png" alt="image"></a>
@@ -69,7 +71,7 @@
                 </div>
                 <div class="search-box">
                     <input type="text" class="search-txt" placeholder="Buscar">
-                    <a class="">
+					<a class="">
                         <span class="fa fa-search" style="font-size: 20px; margin-top: 15px;" styaria-hidden="true"></span>
                     </a>
                 </div>
@@ -77,15 +79,16 @@
         </nav>
     </header>
     <!-- End header -->
-    
-    <!-- section -->
+
+	<!-- section -->
+	
 	<section class="inner_banner">
 	  <div class="container">
 	      <div class="row">
 		      <div class="col-12">
 			    <div class="full">
                         <div class="heading_main text_align_center">
-						
+
                         </div>
 					  </div>
 			  </div>
@@ -96,77 +99,124 @@
 	<!-- end section -->
    
 	<!-- section -->
-	<div class="section layout_padding padding_bottom-0">
+	 <div class="section layout_padding padding_bottom-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="full">
                         <div class="heading_main text_align_center">
-						   <h2><span>Cursos</span></h2>
+						   <h2><span>Trámites</span></h2>
                         </div>
-					</div>
+					  </div>
                 </div>
-			</div>
+			  </div>
+           </div>
         </div>
-    </div>
-	
+    <div class="section layout_padding contact_section" style="background:#f6f6f6;">
         
-<div style="text-align:center;">
-<table style="margin: 0 auto;" BORDER CELLPADDING=10 CELLSPACING=0>
-    <tr bgcolor="#002147" style="color:white" ;>
-      <td>Nombre del Curso</td>
-      <td>Requisitos</td>
-      <td>Costo</td>
-      <td>Profesor</td>
-      <td>Horario</td>
-      <td>Grupo</td>
-      <td>Sala</td>
-      <td>Fecha Inicio</td>
-    </tr>
-    <?php
-        include 'conexion.php';
-        $sql="SELECT * from cursos";
-        $result= mysqli_query($conexion,$sql);
-        while ($mostrar=mysqli_fetch_array($result)){
-    ?>
-    <tr bgcolor="white" onmouseover="this.style.background='#ece8d9';" onmouseout="this.style.background='#095a83'.color='white';">
-      <td> <?php echo $mostrar ['nombre']  ?>  </td>
-      <td> <?php echo $mostrar ['requisitos'] ?>  </td>
-      <td> <?php echo $mostrar ['costo'] ?> </td>
-      <td> <?php echo $mostrar ['matricula_profesor'] ?>  </td>
-      
-      <td> <?php echo $mostrar['dia']. '<br>'.$mostrar ['hora_inicio'].'-'. $mostrar['hora_fin']?>  </td>
-      <td> <?php echo $mostrar ['grupo'] ?> </td>
-      <td> <?php echo $mostrar ['sala']?> </td>
-      <td> <?php echo $mostrar ['fecha_inicio'] ?>  </td>
+	<!-- end section -->
+	<!-- section -->
+    
+	<div class="container" id="container">
+			<div class="content">
+			<h1 style="color:#000080">Inscripción a cursos</h1>
+			<p class="left">Este servicio se realiza de la siguiente manera:</p>
+			<ul>
+				<li>En la opción de <strong>cursos ofertados</strong> deberá ver la publicación del curso deseado</li>
+				<li>Después de elegir su curso, tendrá que ir a la opción <strong>proceso de inscripción</strong> y optar por la opción de menú correspondiente (tiene que imprimir el formato de pre-inscripción).</li>
+				<li>Debe llenarlo con sus datos personales y del curso (además de traer los documentos correspondientes mencionados en el apartado).</li>
+				<li>El pago se deberá efectuar en las cajas de la FES-Cuautitlán C-1 y C-4 con su formato de pre-inscripción, si necesita facturación  debe indicarlo al encargado al igual que su  RFC.</li>
+				<li>Acuda a la Jefatura de Servicios de Cómputo (Edificio del Centro de Cómputo planta alta) con su documentación para poder finalizar su registro.</li>
+			</ul>
+			<!--<li> <a href="campo1.html"> <h2>Campo 1</h2> </a> </li> -->
+            <li><br>
+            </li>
+          </ul>
+          <h1 style="color:#000080">Ambos Campus</h1>
+          <dl>
+            <ul>
+              <p>Se manejan principalmente dos tipos de cursos de cómputo, los
+                que conocemos como <strong>Iniciación al Cómputo I y II</strong>,
+                dirigidos principalmente a comunidad interna de la FES
+                Cuautitlán.</p>
+              <p>El segundo tipo son los cursos que llamamos <strong>Extracurriculares</strong>,
+                que pueden ser de temas específicos como:</p>
+            </ul>
+          </dl>
+          <table cellspacing="0" cellpadding="4" border="1" align="center" width="80%">
+            <tbody>
+              <tr>
+                <td width="50%">
+                  <ul>
+                    <li>Paquetería Contable,</li>
+                    <li>Paquetería de Oficina,</li>
+                    <li>Mantenimiento de Computadoras,</li>
+                    <li>Programación en diferentes lenguajes,</li>
+                  </ul>
+                </td>
+                <td width="50%">
+                  <ul>
+                    <li>Creación de Páginas Web,</li>
+                    <li>Sistemas Operativos,</li>
+                    <li>AutoCAD,</li>
+                    <li>Photoshop,</li>
+                    <li>Illustrator,</li>
+                    <li>etc.</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <dl>
+            <ul>
+              <p>Los cursos se ofrecen en diferentes períodos, los del primer
+                tipo <i>(Iniciación al Cómputo I y II)</i> comienzan en los
+                meses de Febrero y Agosto; el segundo tipo, los que llamamos <i>Extracurriculares</i>,
+                también comienzan en esas fechas, pero además se ofrecen dos
+                períodos intensivos en Enero y Junio y dos intersemestrales en
+                Abril y Octubre.</p>
+              <p>Para inscribirse a cualquiera de ellos debe ingresar a
+                inscripción para llenar el formulario,
+                llénelo con los datos correspondientes y después de realizar el
+                pago en las cajas de la Facultad, acuda a la planta alta del
+                Edif. A7, en Campo 4, en la Sala de Cómputo de Ciencias Administrativas
+                y Contables, en un horario de 10:00 de la mañana a 7:00
+                de la noche, presentando copia de identificación oficial o
+                escolar vigentes, original y copia del ticket de pago y de su
+                formato de inscripción.</p>
+              <p>Las cajas están abiertas de 9:00 de la mañana a 6:00 de la
+                tarde.</p>
+              <p>Los cursos extracurriculares tienen descuentos:</p>
+              <li><b style="color:#000080">Para Alumnos Internos, 50%</b></li>
+			  <li><b style="color:#000080">Presentando credencial de Ex-Alumno UNAM, 20%</b></li>
+			  <div class="full center">
+				<a class="contact_bt" href="formulario.php">Inscripción</a>
+			  </div>
+            </ul>
+          </dl>
+          
+        </div>
+      </div>
+      <!-- termina contenido -->
+		</div>
+	</div>
 
-    </tr>
-
-<?php
-        }
-?>
-
-</table>
-  <div class="full center">
-      <a class="contact_bt" href="formulario.php">Inscripción</a>
-  </div>
-
-</div>
-
-<footer class="footer-box">
+	<!-- end section -->
+    <!-- Start Footer -->
+    <footer class="footer-box">
         <div class="container">
 		
 		   <div class="row">
 		   
 		      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-			     <div class="footer_blog footer_menu white_fonts">
+			     <div class="footer_blog">
 				    <h3>Aviso de Privacidad</h3>
 					 <div class="full white_fonts">
 					    <p>
-                        Esta página puede ser reproducida con fines no lucrativos, 
-                        siempre y cuando no se mutile, se cite la fuente completa 
-                        y su dirección electrónica. De otra forma requiere permiso previo 
-                        por escrito de la institución. </p>
+							Esta página puede ser reproducida con fines no lucrativos, 
+							siempre y cuando no se mutile, se cite la fuente completa 
+							y su dirección electrónica. De otra forma requiere permiso previo 
+							por escrito de la institución. </p>
 					 </div>
 				 </div>
 			  </div>
@@ -175,23 +225,23 @@
 			       <div class="footer_blog footer_menu white_fonts">
 						    <h3>Menú Rapido</h3>
 						    <ul> 
-							  <li><a href="#">> Cursos</a></li>
-							  <li><a href="#">> Temarios</a></li>
-							  <li><a href="#">> Tramites</a></li>
-							  <li><a href="#">> Eventos</a></li>
-							  <li><a href="contact.html">> Contacto</a></li>
+								<li><a href="#">> Cursos</a></li>
+								<li><a href="#">> Temarios</a></li>
+								<li><a href="#">> Tramites</a></li>
+								<li><a href="#">> Eventos</a></li>
+								<li><a href="contact.html">> Contacto</a></li>
 							</ul>
 						 </div>
 				 </div>
 				 
 				 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
 				 <div class="footer_blog full white_fonts">
-						     <h3>Noticias</h3>
-							 <p>Suscríbete para recibir noticias de nuevos cursos de programación</p>
+					<h3>Noticias</h3>
+					<p>Suscríbete para recibir noticias de nuevos cursos de programación</p>
 							 <div class="newsletter_form">
 							    <form action="index.html">
 								   <input type="email" placeholder="Tu correo electrónico" name="#" required />
-								   <button>Enviar</button>
+								   <button>ENVIAR</button>
 								</form>
 							 </div>
 						 </div>
@@ -201,9 +251,9 @@
 				 <div class="footer_blog full white_fonts">
 						     <h3>Contacto</h3>
 							 <ul class="full">
-                                <li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo Cuatro</span></a></li>
-							   <li><img src="images/i6.png"><span>cursos.computo@cuautitlan.unam.mx</span></li>
-							   <li><img src="images/i7.png"><span>56-23-18-79</span></li>
+								<li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo Cuatro</span></a></li>
+								<li><img src="images/i6.png"><span>cursos.computo@cuautitlan.unam.mx</span></li>
+								<li><img src="images/i7.png"><span>56-23-18-79</span></li>
 							 </ul>
 						 </div>
 					</div>	 
@@ -224,13 +274,14 @@
         </div>
     </div>
 
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
 
-     <!-- ALL JS FILES -->
+    <!-- ALL JS FILES -->
     <script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- ALL PLUGINS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script>
     <script src="js/slider-index.js"></script>
