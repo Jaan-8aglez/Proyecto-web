@@ -1,17 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['usuario'])){
-    echo '
-    <script> 
-      alert("Por favor inicia sesion para ingresar a esta página");
-      window.location = "login.html";
-    </script>
-    ';
-    session_destroy();
-    die();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -29,8 +15,7 @@ if(!isset($_SESSION['usuario'])){
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
- 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Site Icons -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="apple-touch-icon" href="#" />
@@ -54,7 +39,6 @@ if(!isset($_SESSION['usuario'])){
 </head>
 
 <body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-
     <!-- LOADER -->
     <div id="preloader">
         <div class="loader">
@@ -78,17 +62,17 @@ if(!isset($_SESSION['usuario'])){
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li><a class="nav-link" href="sabermas.html">Saber más</a></li>
-                        <li><a class="nav-link" href="cursos.php">Cursos</a></li>
-                        <li><a class="nav-link" href="tramite.html">Inscripción</a></li>
-						<li><a class="nav-link" href="contacto.html">Contacto</a></li>
-						<li><a class="nav-link" href="login.html">Iniciar sesión</a></li>
+                        <li><a class="nav-link" href="about.html">Saber más</a></li>
+                        <li><a class="nav-link" href="courses.html">Cursos</a></li>
+                        <li><a class="nav-link" href="reaserch.html">Inscripción</a></li>
+                        <li><a class="nav-link" href="contact.html">Contacto</a></li>
+                        <li><a class="nav-link" href="#">Cuenta</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
-                    <input type="text" class="search-txt" placeholder="Buscar">
-                    <a class="">
-                        <span class="fa fa-search" style="font-size: 20px; margin-top: 15px;" styaria-hidden="true"></span>
+                    <input type="text" class="search-txt" placeholder="Search">
+                    <a class="search-btn">
+                        <img src="images/search_icon.png" alt="#" />
                     </a>
                 </div>
             </div>
@@ -111,10 +95,10 @@ if(!isset($_SESSION['usuario'])){
     </section>
 
     <!-- end section -->
-
+                                
     <!-- section -->
     <div class="row">
-        <div class="full center mt-4">
+        <div class="full center">
             <h4>86132000 Concepto: Servicios de Educación y Capacitación en Administración</h4>
         </div>
         <div class="full center">
@@ -133,18 +117,56 @@ if(!isset($_SESSION['usuario'])){
                  </div> -->
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="contact_form">
-                        <form action="contact.html">
+                        <form action="inscripcion.php" METHOD="POST">
                             <fieldset>
                                 <h1>Datos del Curso</h1>
 
-                                <div class="">
-                                    <input type="text" placeholder=" Nombre del Curso" name="your name" style="border: 2px dotted #999"/>
+                                <!-- <div class="">
+                                    <input required type="text" placeholder=" Nombre del Curso" id="nombre_curso" name="nombre_curso" style="border: 2px dotted #999"/>
+                                </div> -->
+
+                                <h3 style="color:red">Nombre del Curso:</h3>
+
+                                <div>
+                                    <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="nombre_curso" name="nombre_curso" >
+                                    <option selected></option>
+                                    <?php
+                                            include 'conexion.php';
+                                            $sql="SELECT * from cursos";
+                                            $result= mysqli_query($conexion,$sql);
+                                            while ($mostrar=mysqli_fetch_array($result)){
+                                        ?>
+                                        
+                                        <option> <?php echo $mostrar ['nombre']  ?>  </option>
+                                    <?php
+                                            }
+                                    ?>
+                                    </select>
                                 </div>
+                
 
-                                <div class="full field">
-                                    <select class="select" name="Periodo" >
+                                <h3 style="color:red">Fecha de Inicio:</h3>
 
-                                        <option selected>Periodo / Fecha de Inicio</option>
+                                <div class="">
+                                    <!-- <select  required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="fecha_inicio" name="fecha_inicio" >
+
+                                        <option selected ></option>
 
                                         <option>2020-1</option>
                                         
@@ -152,21 +174,166 @@ if(!isset($_SESSION['usuario'])){
                                         
                                         <option>2022-1</option>
                                         
-                                        </select>
-                                </div>
-
-                                <div class="input-group">
-                                    <input type="phn" placeholder="Grupo" name="Phone number" class="col-lg-6" style="border: 2px dotted #999" />
-                                    <input type="phn" placeholder="Sala" name="Phone number" class="col-lg-6" style="border: 2px dotted #999" />
+                                        </select> -->
+                                        <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="fecha_inicio" name="fecha_inicio" >
+                                    <option selected></option>
+                                    <?php
+                                            include 'conexion.php';
+                                            $sql="SELECT * from cursos";
+                                            $result= mysqli_query($conexion,$sql);
+                                            while ($mostrar=mysqli_fetch_array($result)){
+                                        ?>
+                                        
+                                        <option> <?php echo $mostrar ['fecha_inicio']  ?>  </option>
+                                    <?php
+                                            }
+                                    ?>
+                                    </select>
                                 </div>
 
                                 <div class="">
-                                    <input type="text" placeholder=" Profesor" name="your name" style="border: 2px dotted #999"/>
+                                <h3 style="color:red">Grupo:</h3>
+                                    <!-- <input type="phn" placeholder="Grupo" id="grupo"  name="grupo"class="col-lg-6" style="border: 2px dotted #999" /> -->
+                                    <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="grupo" name="grupo" >
+                                    <option selected></option>
+                                    <?php
+                                            include 'conexion.php';
+                                            $sql="SELECT * from cursos";
+                                            $result= mysqli_query($conexion,$sql);
+                                            while ($mostrar=mysqli_fetch_array($result)){
+                                        ?>
+                                        
+                                        <option> <?php echo $mostrar ['grupo']  ?>  </option>
+                                    <?php
+                                            }
+                                    ?>
+                                    </select>
+                                    <!-- <input type="phn" placeholder="Sala" id="sala" name="sala" class="col-lg-6" style="border: 2px dotted #999" /> -->
+                                </div>
+                                <div class="">
+                                <h3 style="color:red">Aula:</h3>
+                                    <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="sala" name="sala" >
+                                    <option selected></option>
+                                    <?php
+                                            include 'conexion.php';
+                                            $sql="SELECT * from cursos";
+                                            $result= mysqli_query($conexion,$sql);
+                                            while ($mostrar=mysqli_fetch_array($result)){
+                                        ?>
+                                        
+                                        <option> <?php echo $mostrar ['sala']  ?>  </option>
+                                    <?php
+                                            }
+                                    ?>
+                                    </select>
+                                </div>
+
+                                <div class="">
+                                    <!-- <input type="text" placeholder=" Profesor" id="profesor" name="profesor" style="border: 2px dotted #999"/> -->
+                                    <div class="">
+                                <h3 style="color:red">Matricula Profesor:</h3>
+                                    <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="profesor" name="profesor" >
+                                    <option selected></option>
+                                    <?php
+                                            include 'conexion.php';
+                                            $sql="SELECT * from cursos";
+                                            $result= mysqli_query($conexion,$sql);
+                                            while ($mostrar=mysqli_fetch_array($result)){
+                                        ?>
+                                        
+                                        <option> <?php echo $mostrar ['matricula_profesor']  ?>  </option>
+                                    <?php
+                                            }
+                                    ?>
+                                    </select>
+                                </div>
                                 </div>                                
                                 
-                                <div class="input-group">
-                                    <input type="number" placeholder="Costo" name="Phone number" class="col-lg-6" style="border: 2px dotted #999" />
-                                    <input type="text" placeholder="Horario" name="Phone number" class="col-lg-6" style="border: 2px dotted #999" />
+                                    <!-- <input type="number" placeholder="Costo" id="costo" name="costo" class="col-lg-6" style="border: 2px dotted #999" />
+                                    <input type="time" placeholder="Horario" id="horario" name="horario" class="col-lg-6" style="border: 2px dotted #999" /> -->
+                                    <h3 style="color:red">Costo: </h3>
+
+                                <div>
+                                    <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="costo" name="costo" >
+                                    <option selected></option>
+                                    <?php
+                                            include 'conexion.php';
+                                            $sql="SELECT * from cursos";
+                                            $result= mysqli_query($conexion,$sql);
+                                            while ($mostrar=mysqli_fetch_array($result)){
+                                        ?>
+                                        
+                                        <option> <?php echo $mostrar ['costo']  ?>  </option>
+                                    <?php
+                                            }
+                                    ?>
+                                    </select>
+                                </div>
+                                <h3 style="color:red">Horario:</h3>
+
+                                <div>
+                                    <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="horario" name="horario" >
+                                    <option selected></option>
+                                    <?php
+                                            include 'conexion.php';
+                                            $sql="SELECT * from cursos";
+                                            $result= mysqli_query($conexion,$sql);
+                                            while ($mostrar=mysqli_fetch_array($result)){
+                                        ?>
+                                        
+                                        <option> <?php echo $mostrar['dia'].' - de - '.$mostrar ['hora_inicio'].' _a_ '. $mostrar['hora_fin']?></option>
+                                    <?php
+                                            }
+                                    ?>
+                                    </select>
                                 </div>
 
 
@@ -175,72 +342,81 @@ if(!isset($_SESSION['usuario'])){
                                 <h1>Datos Personales</h1>
 
                                 <div class="">
-                                    <input type="text" placeholder=" Nombre Completo" name="your name" style="border: 2px dotted #999"/>
+                                <h3 style="color:red">Nombre Completo:</h3>
+                                    <input required type="text" placeholder="Nombre" id="nombre_alumno" name="nombre_alumno" style="border: 2px dotted #999" />
                                 </div>
                                 <div class="">
-                                    <input type="email" placeholder=" Correo Electrónico" name="email" id="email" pattern=".+@hotmail.com" style="border: 2px dotted #999"/>
+                                <h3 style="color:red">Correo Electrónico:</h3>
+                                    <input required type="text" placeholder="Correo" id="correo_alumno" name="correo_alumno"  style="border: 2px dotted #999"/>
                                 </div>
+                                <h3 style="color:red">Celular y Telefono Casa:</h3>
                                 <div class="input-group">
-                                    <input type="number" placeholder="Celular" name="Phone number" class="col-lg-6" style="border: 2px dotted #999" />
-                                    <input type="number" placeholder="Telefono Casa" name="Phone number" class="col-lg-6" style="border: 2px dotted #999" />
+                                    <input required type="number" placeholder="Celular" id="celular_alumno" name="celular_alumno" class="col-lg-6" style="border: 2px dotted #999" />
+                                    <input required type="number" placeholder="Telefono Casa" id="telefono_casa_alumno" name="telefono_casa_alumno"class="col-lg-6" style="border: 2px dotted #999" />
                                 </div>
 
-                                <h4>Procedencia Fes Cuautitlán</h4>
+                                <div class="full center">
+                                <h3 style="color:red">¿Procedencia Fes Cuautitlán?:</h3>
+                                </div>
+                                <div class="">
+                                    <select required style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="procedencia" name="procedencia" >
 
-                                <script type="text/javascript">
+                                        <option selected></option>
 
-                                    function habilitar() {
+                                        <option value="true">SI</option>
                                         
-                                        var rad = document.getElementById("radio1").value;
-                                        var rad2 = document.getElementById("radio2").value;
-
-                                        var selec = document.getElementById("slec").value;
-                                        var selecc = document.getElementById("slecc").value;
-
-                                        console.log(rad);
-                                        console.log(rad2);
-                                        console.log(selec);
-                                        console.log(selecc);
-
-                                        if (rad.value == false && rad2.value == true) {
-
-                                            selec.disabled = false;
-                                        
-                                            return selec;
-                                        } 
-                                    }
-                            </script>
-
-                                <div class="input-group">
+                                        <option value="false">NO</option> 
+                                        </select>
+                                </div>
+                                
+<!--                                 <div class="input-group">
                                     <label class="col-lg-1" style="font-size: 21px;
                                     color: #07528d;
                                     margin-top: 10px;">Si</label>
-                                    <input type="radio" placeholder="Celular" name="radio" id="radio1" value="false"  class="col-lg-1" style="width: 100%;
+                                    <input type="radio" name="radiob" value="false"  class="col-lg-1" style="width: 100%;
                                     margin: 15px 0;
                                     min-height: 30px;
                                     border: none;
                                     background: #fff;
                                     font-size: 17px;
                                     color: #676767;
-                                    padding: 0px 25px; border: 2px dotted #999;" onclick="habilitar()" />
+                                    padding: 0px 25px; border: 2px dotted #999;" />
                                     <label class="col-lg-1" style="font-size: 21px;
                                     color: #07528d;
                                     margin-top: 10px;">No</label>
-                                    <input type="radio" placeholder="Telefono Casa" name="radio" id="radio2" value="true" class="col-lg-1" style="width: 100%;
+                                    <input type="radio" name="radiob" value="true" class="col-lg-1" style="width: 100%;
                                     margin: 15px 0;
                                     min-height: 30px;
                                     border: none;
                                     background: #fff;
                                     font-size: 17px;
                                     color: #676767;
-                                    padding: 0px 25px; border: 2px dotted #999;" onclick="habilitar()" />
+                                    padding: 0px 25px; border: 2px dotted #999;" />
                                 </div>
+ -->
 
 
-                                <div class="full field">
-                                    <select id="slec" class="select" name="Periodo" >
+                                <div class="">
+                                <h3 style="color:red">Carrera (SOLO FES CUAUTITLÁN):</h3>
+                                    <select disabled style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="carrera" name="carrera" >
 
-                                        <option selected>Carrera (SOLO INTERNOS)</option>
+                                        <option selected></option>
 
                                         <option>Informatica</option>
                                         
@@ -252,13 +428,23 @@ if(!isset($_SESSION['usuario'])){
                                 </div>
 
                                 <div class="">
-                                    <input type="number" id="slecc" placeholder="Numero de Cuenta (SOLO INTERNOS)" name="your name" style="border: 2px dotted #999" />
+                                <h3 style="color:red">Numero de Cuenta (SOLO FES CUAUTITLÁN):</h3>
+                                    <input disabled type="number" id="num_cuenta"  name="num_cuenta" placeholder="Numero de Cuenta"  style="border: 2px dotted #999" />
                                 </div>
 
-                                <div class="full field">
-                                    <select class="select" name="Periodo" >
+                                <div class="">
+                                <h3 style="color:red">Grado Academico (SOLO EXTERNOS):</h3>
+                                    <select disabled style="width: 100%;
+                                    margin: 15px 0;
+                                    min-height: 60px;
+                                    border: none;
+                                    background: #fff;
+                                    font-size: 17px;
+                                    color: #676767;
+                                    padding: 0px 25px;
+                                    border: 2px dotted #999;" id="grado_academico" name="grado_academico" >
 
-                                        <option selected>Grado Academico (SOLO EXTERNOS)</option>
+                                        <option selected></option>
 
                                         <option>Secundaria</option>
 
@@ -366,7 +552,6 @@ if(!isset($_SESSION['usuario'])){
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script>
     <script src="js/slider-index.js"></script>
@@ -478,6 +663,21 @@ if(!isset($_SESSION['usuario'])){
             }
         });
     </script>
+    <script>
+    $('#procedencia').on('change', function() { 
+        var desabilitado = (this.value === 'true');
+        $('#grado_academico').prop('disabled', desabilitado); 
+        $('#carrera').prop('disabled', !desabilitado);
+        $('#num_cuenta').prop('disabled', !desabilitado);});                            
+    </script>
 </body>
 
 </html>
+
+<!-- <script>
+    $('#procedencia').on('change', function() { 
+        var desabilitado = (this.value === 'true');
+        $('#grado_academico').prop('disabled', desabilitado); 
+        $('#carrera').prop('disabled', !desabilitado);
+        $('#num_cuenta').prop('disabled', !desabilitado);});                            
+    </script> -->
