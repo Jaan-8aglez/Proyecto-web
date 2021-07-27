@@ -140,7 +140,7 @@
                                     <option selected></option>
                                     <?php
                                             include 'conexion.php';
-                                            $sql="SELECT * from cursos";
+                                            $sql="SELECT DISTINCT nombre from cursos";
                                             $result= mysqli_query($conexion,$sql);
                                             while ($mostrar=mysqli_fetch_array($result)){
                                         ?>
@@ -187,7 +187,7 @@
                                     <option selected></option>
                                     <?php
                                             include 'conexion.php';
-                                            $sql="SELECT * from cursos";
+                                            $sql="SELECT DISTINCT fecha_inicio from cursos";
                                             $result= mysqli_query($conexion,$sql);
                                             while ($mostrar=mysqli_fetch_array($result)){
                                         ?>
@@ -214,7 +214,7 @@
                                     <option selected></option>
                                     <?php
                                             include 'conexion.php';
-                                            $sql="SELECT * from cursos";
+                                            $sql="SELECT DISTINCT grupo from cursos";
                                             $result= mysqli_query($conexion,$sql);
                                             while ($mostrar=mysqli_fetch_array($result)){
                                         ?>
@@ -240,7 +240,7 @@
                                     <option selected></option>
                                     <?php
                                             include 'conexion.php';
-                                            $sql="SELECT * from cursos";
+                                            $sql="SELECT DISTINCT sala from cursos";
                                             $result= mysqli_query($conexion,$sql);
                                             while ($mostrar=mysqli_fetch_array($result)){
                                         ?>
@@ -268,7 +268,7 @@
                                     <option selected></option>
                                     <?php
                                             include 'conexion.php';
-                                            $sql="SELECT * from cursos";
+                                            $sql="SELECT DISTINCT matricula_profesor from cursos";
                                             $result= mysqli_query($conexion,$sql);
                                             while ($mostrar=mysqli_fetch_array($result)){
                                         ?>
@@ -298,7 +298,7 @@
                                     <option selected></option>
                                     <?php
                                             include 'conexion.php';
-                                            $sql="SELECT * from cursos";
+                                            $sql="SELECT DISTINCT costo from cursos";
                                             $result= mysqli_query($conexion,$sql);
                                             while ($mostrar=mysqli_fetch_array($result)){
                                         ?>
@@ -324,7 +324,7 @@
                                     <option selected></option>
                                     <?php
                                             include 'conexion.php';
-                                            $sql="SELECT * from cursos";
+                                            $sql="SELECT DISTINCT * from cursos";
                                             $result= mysqli_query($conexion,$sql);
                                             while ($mostrar=mysqli_fetch_array($result)){
                                         ?>
