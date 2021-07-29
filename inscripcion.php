@@ -1,5 +1,6 @@
 <?php
-    include 'conexion.php';
+    require_once "conexion.php";
+    $conexion=conexion();
     
     $nombre_curso =$_POST['nombre_curso'];
     $fecha_inicio =$_POST['fecha_inicio'];

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>REGISTRO</title>
+	<title>REGISTRO USUARIOS</title>
 	<link rel="shortcut icon" href="images/unam-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="css/login.css"/>
@@ -21,7 +21,7 @@
 			</div>
 			<span>o use su correo electrónico para registrarse</span>
             <input type="text" name="nombre" placeholder="Nombre" />
-            <input type="cuenta" name="cuenta" placeholder="Matricula" />
+            <input type="telefono" name="telefono" placeholder="Telefono" />
 			<input type="email" name="email" placeholder="Email" />
 			<input type="password" name="contraseña" placeholder="Contraseña" />
 			<button class="ingresar">Ingresar</button>
@@ -45,13 +45,14 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Bienvenido!</h1>
-				<p>Para poder inscribirte, inicia sesión con tus datos</p>
-				<button class="ghost" id="signIn">Iniciar sesión</button>
+				<h1>¿Eres alumno de FESC?</h1>
+				<p>Registra tus datos de alumno</p>
+				<button><a class="btn ghost" id="signIn" href="registro-alumnos.html">Ingresar</a></button>
+				
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>¿No tienes una cuenta?</h1>
-				<p>Ingrese sus datos para poder inscribirse</p>
+				<p>Ingrese sus datos para poder acceder</p>
 				<button class="ghost" id="signUp">Registrarse</button>
 			</div>
 		</div>
