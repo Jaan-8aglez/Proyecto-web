@@ -1,13 +1,17 @@
-<?php
-//Detalles de la BD
-$dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
-$dbName = 'cursos';
+<?php 
+function conexion(){
 
-//Creamos la conexion
-$conexion= new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+    $servidor= "localhost";
+    $usuario= "root";
+    $password= "";
+    $bd= "cursos";
+    $conexion= mysqli_connect($servidor,$usuario,$password,$bd);
+    return $conexion;
+    
+    if ($conexion->connect_error) {
+        die("Error al conectarse con la BD: " . $db->connect_error);
+    }
 
-if ($conexion->connect_error) {
-    die("Error al conectarse con la BD: " . $db->connect_error);
 }
+
+?>

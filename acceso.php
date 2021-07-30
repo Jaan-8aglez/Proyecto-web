@@ -2,7 +2,8 @@
 
 session_start();
 
-include 'conexion.php';
+require_once "conexion.php";
+$conexion=conexion();
 
 $email = $_POST['email'];
 $contraseña = $_POST['contraseña'];
