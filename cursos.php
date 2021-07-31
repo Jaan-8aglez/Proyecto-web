@@ -108,6 +108,13 @@
 			</div>
         </div>
     </div>
+    <div class="container">
+		<h1 style="color:#095a83; text-align:center;">Cursos Iniciación al Cómputo Semestre 2021-2</h1>
+		<p style="color:#095a83; text-align:center;">Fecha de Publicación Febrero 10 de 2021</p>
+		<div>
+			<p style="text-align:center; font-size: 18px; margin-bottom:40px;">Debido a la contingencia por el covid-19 los cursos serán impartidos <strong>totalmente en línea</strong></p>
+        </div>
+    </div>
 	
         
 <div style="text-align:center;">
@@ -133,7 +140,7 @@
     <tr bgcolor="white" onmouseover="this.style.background='#ece8d9';" onmouseout="this.style.background='#095a83'.color='white';">
       <td> <?php echo $mostrar ['nombre']  ?>  </td>
       <td> <?php echo $mostrar ['requisitos'] ?>  </td>
-      <td> <?php echo $mostrar ['costo'] ?> </td>
+      <td>$ <?php echo $mostrar ['costo'] ?> </td>
       <td> <?php echo $mostrar ['profesor'] ?>  </td>
       
       <td> <?php echo $mostrar['dia']. '<br>'.$mostrar ['hora_inicio'].'-'. $mostrar['hora_fin']?>  </td>
