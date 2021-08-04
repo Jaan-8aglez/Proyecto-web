@@ -1,3 +1,8 @@
+<?php
+
+include 'conexion.php';
+include_once ("validar_sesion.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -60,12 +65,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li><a class="nav-link" href="sabermas.html">Saber más</a></li>
-                        <li><a class="nav-link" href="cursos.php">Cursos</a></li>
-                        <li><a class="nav-link" href="tramite.html">Inscripción</a></li>
-						            <li><a class="nav-link" href="contacto.html">Contacto</a></li>
-						            <li><a class="nav-link" href="login.html">Iniciar sesión</a></li>
+                    <li><a class="nav-link" href="sabermas1.php">Saber más</a></li>
+                        <li><a class="nav-link" href="cursos1.php">Cursos</a></li>
+                        <li><a class="nav-link" href="tramite1.php">Inscripción</a></li>
+						            <li><a class="nav-link" href="contacto1.php">Contacto</a></li>
+						            <li><a class="nav-link" href="cerrar_sesion.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
@@ -219,7 +223,9 @@
       </div>
   </div>
   </div>
-    
+    <div class="full center">
+       <a class="contact_bt" href="formulario.php">Inscripción</a>
+    </div>
 
 	<!-- end section -->
   

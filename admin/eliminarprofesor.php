@@ -1,10 +1,8 @@
 <?php
 require_once "../conexion.php";
 
-$fila= $conexion->query('select from profesores where matricula_profesor='.$_POST['matricula']);
-$id = mysqli_fetch_row($fila);
 
 
-$conexion->query("delete from profesores where matricula_profesor=".$_POST['matricula']);
+$conexion->query("delete from profesores where matricula_profesor=".$_POST['id']);
 echo 'Se elimino correctamente';
 ?>

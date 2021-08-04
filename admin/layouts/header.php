@@ -1,3 +1,9 @@
+<?php
+// Mandamos llamar nuestra BD
+include 'conexion1.php';
+include_once ("validar_sesion1.php");
+
+?>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -229,7 +235,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../cerrarSesion.php" class="nav-link">
+            <a href="../cerrar_sesion.php" class="nav-link">
               <i class="nav-icon fa fa-times"></i>
               <p>
                 Cerrar Sesión

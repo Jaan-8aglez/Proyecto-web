@@ -2,8 +2,8 @@
 // Mandamos llamar nuestra BD
 include 'conexion.php';
 include_once ("validar_sesion.php");
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -21,7 +21,7 @@ include_once ("validar_sesion.php");
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-     
+	
     <!-- Site Icons -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="apple-touch-icon" href="#" />
@@ -37,23 +37,25 @@ include_once ("validar_sesion.php");
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
 
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
 <body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-   
-     <!-- LOADER -->
-     <div id="preloader">
+    <!-- LOADER -->
+    <div id="preloader">
         <div class="loader">
             <img src="images/loa2.gif" alt="#" />
         </div>
     </div>
-    <!-- end loader -->
     <!-- END LOADER -->
-   
-    <!-- Start header -->
-    <header class="top-header">
+
+     <!-- Start header -->
+	 <header class="top-header">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"><img src="images/logo-unam.png" alt="image"></a>
@@ -64,7 +66,7 @@ include_once ("validar_sesion.php");
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                    <li><a class="nav-link" href="sabermas1.php">Saber más</a></li>
+                        <li><a class="nav-link" href="sabermas1.php">Saber más</a></li>
                         <li><a class="nav-link" href="cursos1.php">Cursos</a></li>
                         <li><a class="nav-link" href="tramite1.php">Inscripción</a></li>
 						<li><a class="nav-link" href="contacto1.php">Contacto</a></li>
@@ -73,7 +75,7 @@ include_once ("validar_sesion.php");
                 </div>
                 <div class="search-box">
                     <input type="text" class="search-txt" placeholder="Buscar">
-                    <a class="">
+					<a class="">
                         <span class="fa fa-search" style="font-size: 20px; margin-top: 15px;" styaria-hidden="true"></span>
                     </a>
                 </div>
@@ -81,15 +83,16 @@ include_once ("validar_sesion.php");
         </nav>
     </header>
     <!-- End header -->
-    
-    <!-- section -->
+
+	<!-- section -->
+	
 	<section class="inner_banner">
 	  <div class="container">
 	      <div class="row">
 		      <div class="col-12">
 			    <div class="full">
                         <div class="heading_main text_align_center">
-						
+
                         </div>
 					  </div>
 			  </div>
@@ -100,90 +103,65 @@ include_once ("validar_sesion.php");
 	<!-- end section -->
    
 	<!-- section -->
-	<div class="section layout_padding padding_bottom-0">
+	 <div class="section layout_padding padding_bottom-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="full">
                         <div class="heading_main text_align_center">
-						   <h2><span>Cursos</span></h2>
+						   <h2><span>Contacto</span></h2>
                         </div>
-					</div>
+					  </div>
                 </div>
-			</div>
+			  </div>
+           </div>
         </div>
-    </div>
-    <div class="container">
-		<h1 style="color:#095a83; text-align:center;">Cursos Iniciación al Cómputo Semestre 2021-2</h1>
-		<p style="color:#095a83; text-align:center;">Fecha de Publicación Febrero 10 de 2021</p>
-		<div>
-			<p style="text-align:center; font-size: 18px; margin-bottom:40px;">Debido a la contingencia por el covid-19 los cursos serán impartidos <strong>totalmente en línea</strong></p>
+    <div class="section layout_padding contact_section" style="background:#f6f6f6;">
+        <div class="container">
+               <div class="row">
+                 <div class="col-lg-8 col-md-8 col-sm-12">
+				    <div class="full float-right_img">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3158.7931566807515!2d-99.19023067771441!3d19.69306049107807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f55f752d8035%3A0x18d253a85bb8bf58!2sFESC%20Campo%204%20Acceso%202!5e0!3m2!1ses-419!2smx!4v1625883056010!5m2!1ses-419!2smx" width="750" height="555" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                 </div>
+				 <div class="col-lg-4 col-md-4 col-sm-12">
+				    <div class="contact_form">
+					    <form action="contact.html">
+						
+						   <fieldset style ="background-color:#002147; width: 110%; padding: 25% 7% 50%; color: white;">
+						   	    <div class="full field" >
+							    <li><img src="images/i5.png" alt="#" ><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank" style="color: white;"><span class="icon"></span><span>    Centro de Cómputo, primer piso , Campo Cuatro, Carretera Cuautitlán-Teoloyucan Km. 2.5, Col. San Sebastián Xhala, Cuautitlán Izcalli, Estado de México, CP. 54714</span></a></li>
+								<br>
+								<br>
+								<li><img src="images/i6.png">cursos.computo@cuautitlan.unam.mx</li>
+								<br>
+								<br>
+								<li><img src="images/i7.png"><span>56-23-18-79</span></li>
+							   </div>
+							
+						   </fieldset>
+						</form>
+					</div>
+                 </div>
+               </div>			  
+           </div>
         </div>
-    </div>
-	
-        
-<div style="text-align:center;">
-<table style="margin: 0 auto;" BORDER CELLPADDING=10 CELLSPACING=0>
-    <tr bgcolor="#002147" style="color:white" ;>
-      <td>Nombre del Curso</td>
-      <td>Requisitos</td>
-      <td>Costo</td>
-      <td>Profesor</td>
-      <td>Horario</td>
-      <td>Grupo</td>
-      <td>Sala</td>
-      <td>Fecha Inicio</td>
-    </tr>
-    <?php
-        require_once "conexion.php";
-        /* $conexion=conexion(); */
-       
-/*         $result = $conexion->query("select cursos.*, profesores.nombre as profesor
- from cursos inner join profesores on cursos.matricula_profesor = profesores.matricula_profesor")or die ($conexion->error);
- */        
-        $sql = "SELECT cursos.*, profesores.nombre as profesor
- from cursos inner join profesores on cursos.matricula_profesor = profesores.matricula_profesor";  
-        $result= mysqli_query($conexion,$sql);
-            while ($mostrar=mysqli_fetch_array($result)){
-    ?>
-    <tr bgcolor="white" onmouseover="this.style.background='#ece8d9';" onmouseout="this.style.background='#095a83'.color='white';">
-      <td> <?php echo $mostrar ['nombre']  ?>  </td>
-      <td> <?php echo $mostrar ['requisitos'] ?>  </td>
-      <td>$ <?php echo $mostrar ['costo'] ?> </td>
-      <td> <?php echo $mostrar ['profesor'] ?>  </td>
-      
-      <td> <?php echo $mostrar['dia']. '<br>'.$mostrar ['hora_inicio'].'-'. $mostrar['hora_fin']?>  </td>
-      <td> <?php echo $mostrar ['grupo'] ?> </td>
-      <td> <?php echo $mostrar ['sala']?> </td>
-      <td> <?php echo $mostrar ['fecha_inicio'] ?>  </td>
-
-    </tr>
-
-<?php
-        }
-?>
-
-</table>
-  <div class="full center">
-      <a class="contact_bt" href="formulario.php">Inscripción</a>
-  </div>
-
-</div>
-
-<footer class="footer-box">
+	<!-- end section -->
+    <!-- Start Footer -->
+    <footer class="footer-box">
         <div class="container">
 		
 		   <div class="row">
 		   
 		      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-			     <div class="footer_blog footer_menu white_fonts">
+			     <div class="footer_blog">
 				    <h3>Aviso de Privacidad</h3>
 					 <div class="full white_fonts">
 					    <p>
-                        Esta página puede ser reproducida con fines no lucrativos, 
-                        siempre y cuando no se mutile, se cite la fuente completa 
-                        y su dirección electrónica. De otra forma requiere permiso previo 
-                        por escrito de la institución. </p>
+							Esta página puede ser reproducida con fines no lucrativos, 
+							siempre y cuando no se mutile, se cite la fuente completa 
+							y su dirección electrónica. De otra forma requiere permiso previo 
+							por escrito de la institución. </p>
 					 </div>
 				 </div>
 			  </div>
@@ -192,23 +170,23 @@ include_once ("validar_sesion.php");
 			       <div class="footer_blog footer_menu white_fonts">
 						    <h3>Menú Rapido</h3>
 						    <ul> 
-							  <li><a href="#">> Cursos</a></li>
-							  <li><a href="#">> Temarios</a></li>
-							  <li><a href="#">> Tramites</a></li>
-							  <li><a href="#">> Eventos</a></li>
-							  <li><a href="contact.html">> Contacto</a></li>
+								<li><a href="#">> Cursos</a></li>
+								<li><a href="#">> Temarios</a></li>
+								<li><a href="#">> Tramites</a></li>
+								<li><a href="#">> Eventos</a></li>
+								<li><a href="contact.html">> Contacto</a></li>
 							</ul>
 						 </div>
 				 </div>
 				 
 				 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
 				 <div class="footer_blog full white_fonts">
-						     <h3>Noticias</h3>
-							 <p>Suscríbete para recibir noticias de nuevos cursos de programación</p>
+					<h3>Noticias</h3>
+					<p>Suscríbete para recibir noticias de nuevos cursos de programación</p>
 							 <div class="newsletter_form">
 							    <form action="index.html">
 								   <input type="email" placeholder="Tu correo electrónico" name="#" required />
-								   <button>Enviar</button>
+								   <button>ENVIAR</button>
 								</form>
 							 </div>
 						 </div>
@@ -218,9 +196,9 @@ include_once ("validar_sesion.php");
 				 <div class="footer_blog full white_fonts">
 						     <h3>Contacto</h3>
 							 <ul class="full">
-                                <li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo Cuatro</span></a></li>
-							   <li><img src="images/i6.png"><span>cursos.computo@cuautitlan.unam.mx</span></li>
-							   <li><img src="images/i7.png"><span>56-23-18-79</span></li>
+								<li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo Cuatro</span></a></li>
+								<li><img src="images/i6.png"><span>cursos.computo@cuautitlan.unam.mx</span></li>
+								<li><img src="images/i7.png"><span>56-23-18-79</span></li>
 							 </ul>
 						 </div>
 					</div>	 
@@ -240,13 +218,14 @@ include_once ("validar_sesion.php");
             </div>
         </div>
     </div>
+
     <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
 
-     <!-- ALL JS FILES -->
+    <!-- ALL JS FILES -->
     <script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
+	<!-- ALL PLUGINS -->
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script>
     <script src="js/slider-index.js"></script>

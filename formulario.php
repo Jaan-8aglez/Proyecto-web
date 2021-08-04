@@ -66,12 +66,11 @@ include_once ("validar_sesion.php");
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" href="index.html">Inicio</a></li>
-                        <li><a class="nav-link" href="sabermas.html">Saber más</a></li>
-                        <li><a class="nav-link" href="cursos.php">Cursos</a></li>
-                        <li><a class="nav-link" href="tramite.html">Inscripción</a></li>
-                        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
-                        <li><a class="nav-link" href="cerrar_sesion.php">Salir</a></li>
+                    <li><a class="nav-link" href="sabermas1.html">Saber más</a></li>
+                        <li><a class="nav-link" href="cursos1.php">Cursos</a></li>
+                        <li><a class="nav-link" href="tramite1.html">Inscripción</a></li>
+						<li><a class="nav-link" href="contacto1.html">Contacto</a></li>
+						<li><a class="nav-link" href="cerrar_sesion.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
