@@ -1,6 +1,4 @@
 <?php 
-function conexion(){
-
     $servidor= "localhost";
     $usuario= "root";
     $password= "";
@@ -9,9 +7,9 @@ function conexion(){
     return $conexion;
     
     if ($conexion->connect_error) {
-        die("Error al conectarse con la BD: " . $db->connect_error);
+        die("Error al conectarse con la BD: " . $conexion->connect_error);
     }
 
-}
+
 
 ?>

@@ -1,19 +1,17 @@
 <?php
-
-session_start();
+require 'valores_sesion.php';
 
 require_once "conexion.php";
-$conexion=conexion();
 
 $email = $_POST['email'];
-$contraseña = $_POST['contraseña'];
+$contraseña = $_POST['password'];
 
-$validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE email='$email' and contraseña='$contraseña' ");
+$sql ="SELECT correo FROM alumnos WHERE correo='$email' and contraseña='$contraseña' ";
+$validar_login= mysqli_query($conexion,$sql);
 
 if(mysqli_num_rows($validar_login) > 0){
     $_SESSION['usuario'] = $email;
-
-    header('location: cursos.php');
+    header('location: cursos1.php');
     mysqli_close($conexion);
 
 }else{

@@ -1,13 +1,16 @@
 <?php
 require_once "conexion.php";
-$conexion=conexion();
 
 $nombre = $_POST['nombre'];
 $telefono = $_POST['telefono'];
 $email = $_POST['email'];
 $contraseña = $_POST['contraseña'];
+$apellido = $_POST['apellido'];
+$grado_academico = $_POST['grado_academico'];
 
-$query = "INSERT INTO usuarios (nombre,telefono,email,contraseña) VALUES ('$nombre','$telefono','$email','$contraseña')";
+// se tiene que ir el insert a la tabla alumnos
+/* $query = "INSERT INTO usuarios (nombre,telefono,email,contraseña) VALUES ('$nombre','$telefono','$email','$contraseña')"; */
+$query = "INSERT INTO alumnos (nombre,celular,correo,contraseña,apellido,grado_academico) VALUES ('$nombre','$telefono','$email','$contraseña','$apellido','$grado_academico')";
 //verificar que el correo no se repita en la BD
 $verificar_email= mysqli_query($conexion, "SELECT * FROM usuarios WHERE email='$email' ");
 
@@ -27,7 +30,7 @@ if($resultado){
     echo '
     <script> 
       alert("Usuario registrado exitosamente!");
-      window.location = "index.html";
+      window.location = "login.html";
     </script>
     ';
 } else {

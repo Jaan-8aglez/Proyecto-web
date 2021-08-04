@@ -1,12 +1,9 @@
 <?php
-
-require_once "conexion.php";
-session_start();
- /* Se realiza la conexion a la base de datos, se inicia la sesion, se restringuen las interfaces, y se declaran las variables de sistema que se van a usar en este .php */
-/*  require 'conexion.php'; */
-/*  include_once ("validar_sesion.php");
- validar_sesion(); */
+// Mandamos llamar nuestra BD
+include 'conexion.php';
+include_once ("validar_sesion.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -72,7 +69,7 @@ session_start();
                         <li><a class="nav-link" href="cursos.php">Cursos</a></li>
                         <li><a class="nav-link" href="tramite.html">Inscripción</a></li>
 						<li><a class="nav-link" href="contacto.html">Contacto</a></li>
-						<li><a class="nav-link" href="login.html">Iniciar sesión</a></li>
+						<li><a class="nav-link" href="cerrar_sesion.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
@@ -153,7 +150,7 @@ session_start();
     <tr bgcolor="white" onmouseover="this.style.background='#ece8d9';" onmouseout="this.style.background='#095a83'.color='white';">
       <td> <?php echo $mostrar ['nombre']  ?>  </td>
       <td> <?php echo $mostrar ['requisitos'] ?>  </td>
-      <td> <?php echo $mostrar ['costo'] ?> </td>
+      <td>$ <?php echo $mostrar ['costo'] ?> </td>
       <td> <?php echo $mostrar ['profesor'] ?>  </td>
       
       <td> <?php echo $mostrar['dia']. '<br>'.$mostrar ['hora_inicio'].'-'. $mostrar['hora_fin']?>  </td>
@@ -168,10 +165,10 @@ session_start();
 ?>
 
 </table>
-<!--   <div class="full center">
+  <div class="full center">
       <a class="contact_bt" href="formulario.php">Inscripción</a>
   </div>
- -->
+
 </div>
 
 <footer class="footer-box">

@@ -1,7 +1,5 @@
 <?php
 require_once "conexion.php";
-$conexion=conexion();
-
 
 if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['correo']) && isset($_POST['contraseña'])
 && isset($_POST['cuenta']) && isset($_POST['celular']) && isset($_POST['telcasa']) && isset($_POST['carrera']) && isset($_POST['semestre'])){

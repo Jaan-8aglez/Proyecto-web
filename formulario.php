@@ -1,3 +1,10 @@
+<?php
+// Mandamos llamar nuestra BD
+include 'conexion.php';
+include_once ("validar_sesion.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -47,14 +54,12 @@
     </div>
     <!-- end loader -->
     <!-- END LOADER -->
-
     <!-- Start header -->
     <header class="top-header">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"><img src="images/logo-unam.png" alt="image"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
-                    aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -65,8 +70,8 @@
                         <li><a class="nav-link" href="sabermas.html">Saber más</a></li>
                         <li><a class="nav-link" href="cursos.php">Cursos</a></li>
                         <li><a class="nav-link" href="tramite.html">Inscripción</a></li>
-						<li><a class="nav-link" href="contacto.html">Contacto</a></li>
-						<li><a class="nav-link" href="login.html">Iniciar sesión</a></li>
+                        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li><a class="nav-link" href="cerrar_sesion.php">Salir</a></li>
                     </ul>
                 </div>
                 <div class="search-box">
@@ -95,7 +100,7 @@
     </section>
 
     <!-- end section -->
-                                
+
     <!-- section -->
     <div class="row">
         <div class="full center mt-5">
@@ -136,23 +141,23 @@
                                     font-size: 17px;
                                     color: #676767;
                                     padding: 0px 25px;
-                                    border: 2px dotted #999;" id="nombre_curso" name="nombre_curso" >
-                                    <option selected></option>
-                                    <?php
-                                            require_once "conexion.php";
-                                            $conexion=conexion();
-                                            $sql="SELECT DISTINCT nombre from cursos";
-                                            $result= mysqli_query($conexion,$sql);
-                                            while ($mostrar=mysqli_fetch_array($result)){
+                                    border: 2px dotted #999;" id="nombre_curso" name="nombre_curso">
+                                        <option selected></option>
+                                        <?php
+                                        require_once "conexion.php";
+
+                                        $sql = "SELECT DISTINCT nombre from cursos";
+                                        $result = mysqli_query($conexion, $sql);
+                                        while ($mostrar = mysqli_fetch_array($result)) {
                                         ?>
-                                        
-                                        <option> <?php echo $mostrar ['nombre']  ?>  </option>
-                                    <?php
-                                            }
-                                    ?>
+
+                                            <option> <?php echo $mostrar['nombre']  ?> </option>
+                                        <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
-                
+
 
                                 <h3 style="color: #095a83">Fecha de Inicio:</h3>
 
@@ -176,7 +181,7 @@
                                         <option>2022-1</option>
                                         
                                         </select> -->
-                                        <select required style="width: 100%;
+                                    <select required style="width: 100%;
                                     margin: 15px 0;
                                     min-height: 60px;
                                     border: none;
@@ -184,25 +189,25 @@
                                     font-size: 17px;
                                     color: #676767;
                                     padding: 0px 25px;
-                                    border: 2px dotted #999;" id="fecha_inicio" name="fecha_inicio" >
-                                    <option selected></option>
-                                    <?php
-                                            require_once "conexion.php";
-                                            $conexion=conexion();
-                                            $sql="SELECT DISTINCT fecha_inicio from cursos";
-                                            $result= mysqli_query($conexion,$sql);
-                                            while ($mostrar=mysqli_fetch_array($result)){
+                                    border: 2px dotted #999;" id="fecha_inicio" name="fecha_inicio">
+                                        <option selected></option>
+                                        <?php
+                                        require_once "conexion.php";
+
+                                        $sql = "SELECT DISTINCT fecha_inicio from cursos";
+                                        $result = mysqli_query($conexion, $sql);
+                                        while ($mostrar = mysqli_fetch_array($result)) {
                                         ?>
-                                        
-                                        <option> <?php echo $mostrar ['fecha_inicio']  ?>  </option>
-                                    <?php
-                                            }
-                                    ?>
+
+                                            <option> <?php echo $mostrar['fecha_inicio']  ?> </option>
+                                        <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
 
                                 <div class="">
-                                <h3 style="color: #095a83">Grupo:</h3>
+                                    <h3 style="color: #095a83">Grupo:</h3>
                                     <!-- <input type="phn" placeholder="Grupo" id="grupo"  name="grupo"class="col-lg-6" style="border: 2px dotted #999" /> -->
                                     <select required style="width: 100%;
                                     margin: 15px 0;
@@ -212,25 +217,25 @@
                                     font-size: 17px;
                                     color: #676767;
                                     padding: 0px 25px;
-                                    border: 2px dotted #999;" id="grupo" name="grupo" >
-                                    <option selected></option>
-                                    <?php
-                                            require_once "conexion.php";
-                                            $conexion=conexion();
-                                            $sql="SELECT DISTINCT grupo from cursos";
-                                            $result= mysqli_query($conexion,$sql);
-                                            while ($mostrar=mysqli_fetch_array($result)){
+                                    border: 2px dotted #999;" id="grupo" name="grupo">
+                                        <option selected></option>
+                                        <?php
+                                        require_once "conexion.php";
+
+                                        $sql = "SELECT DISTINCT grupo from cursos";
+                                        $result = mysqli_query($conexion, $sql);
+                                        while ($mostrar = mysqli_fetch_array($result)) {
                                         ?>
-                                        
-                                        <option> <?php echo $mostrar ['grupo']  ?>  </option>
-                                    <?php
-                                            }
-                                    ?>
+
+                                            <option> <?php echo $mostrar['grupo']  ?> </option>
+                                        <?php
+                                        }
+                                        ?>
                                     </select>
                                     <!-- <input type="phn" placeholder="Sala" id="sala" name="sala" class="col-lg-6" style="border: 2px dotted #999" /> -->
                                 </div>
                                 <div class="">
-                                <h3 style="color: #095a83">Aula:</h3>
+                                    <h3 style="color: #095a83">Aula:</h3>
                                     <select required style="width: 100%;
                                     margin: 15px 0;
                                     min-height: 60px;
@@ -239,28 +244,28 @@
                                     font-size: 17px;
                                     color: #676767;
                                     padding: 0px 25px;
-                                    border: 2px dotted #999;" id="sala" name="sala" >
-                                    <option selected></option>
-                                    <?php
-                                            require_once "conexion.php";
-                                            $conexion=conexion();
-                                            $sql="SELECT DISTINCT sala from cursos";
-                                            $result= mysqli_query($conexion,$sql);
-                                            while ($mostrar=mysqli_fetch_array($result)){
+                                    border: 2px dotted #999;" id="sala" name="sala">
+                                        <option selected></option>
+                                        <?php
+                                        require_once "conexion.php";
+
+                                        $sql = "SELECT DISTINCT sala from cursos";
+                                        $result = mysqli_query($conexion, $sql);
+                                        while ($mostrar = mysqli_fetch_array($result)) {
                                         ?>
-                                        
-                                        <option> <?php echo $mostrar ['sala']  ?>  </option>
-                                    <?php
-                                            }
-                                    ?>
+
+                                            <option> <?php echo $mostrar['sala']  ?> </option>
+                                        <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
 
                                 <div class="">
                                     <!-- <input type="text" placeholder=" Profesor" id="profesor" name="profesor" style="border: 2px dotted #999"/> -->
                                     <div class="">
-                                <h3 style="color: #095a83">Matricula Profesor:</h3>
-                                    <select required style="width: 100%;
+                                        <h3 style="color: #095a83">Nombre y Matricula del Profesor:</h3>
+                                        <select required style="width: 100%;
                                     margin: 15px 0;
                                     min-height: 60px;
                                     border: none;
@@ -268,27 +273,28 @@
                                     font-size: 17px;
                                     color: #676767;
                                     padding: 0px 25px;
-                                    border: 2px dotted #999;" id="profesor" name="profesor" >
-                                    <option selected></option>
-                                    <?php
+                                    border: 2px dotted #999;" id="profesor" name="profesor">
+                                            <option selected></option>
+                                            <?php
                                             require_once "conexion.php";
-                                            $conexion=conexion();
-                                            $sql="SELECT DISTINCT matricula_profesor from cursos";
-                                            $result= mysqli_query($conexion,$sql);
-                                            while ($mostrar=mysqli_fetch_array($result)){
-                                        ?>
-                                        
-                                        <option> <?php echo $mostrar ['matricula_profesor']  ?>  </option>
-                                    <?php
+                                            $resultado = "SELECT * from profesores";
+
+                                            /* $sql="SELECT DISTINCT matricula_profesor from cursos"; */
+                                            $result = mysqli_query($conexion, $resultado);
+                                            while ($mostrar = mysqli_fetch_array($result)) {
+                                            ?>
+
+                                                <option> <?php echo $mostrar['matricula_profesor'] . ' - ' . $mostrar['nombre']  ?> </option>
+                                            <?php
                                             }
-                                    ?>
-                                    </select>
+                                            ?>
+                                        </select>
+                                    </div>
                                 </div>
-                                </div>                                
-                                
-                                    <!-- <input type="number" placeholder="Costo" id="costo" name="costo" class="col-lg-6" style="border: 2px dotted #999" />
+
+                                <!-- <input type="number" placeholder="Costo" id="costo" name="costo" class="col-lg-6" style="border: 2px dotted #999" />
                                     <input type="time" placeholder="Horario" id="horario" name="horario" class="col-lg-6" style="border: 2px dotted #999" /> -->
-                                    <h3 style="color: #095a83">Costo: </h3>
+                                <h3 style="color: #095a83">Costo: </h3>
 
                                 <div>
                                     <select required style="width: 100%;
@@ -299,20 +305,20 @@
                                     font-size: 17px;
                                     color: #676767;
                                     padding: 0px 25px;
-                                    border: 2px dotted #999;" id="costo" name="costo" >
-                                    <option selected></option>
-                                    <?php
-                                            require_once "conexion.php";
-                                            $conexion=conexion();
-                                            $sql="SELECT DISTINCT costo from cursos";
-                                            $result= mysqli_query($conexion,$sql);
-                                            while ($mostrar=mysqli_fetch_array($result)){
+                                    border: 2px dotted #999;" id="costo" name="costo">
+                                        <option selected></option>
+                                        <?php
+                                        require_once "conexion.php";
+
+                                        $sql = "SELECT DISTINCT costo from cursos";
+                                        $result = mysqli_query($conexion, $sql);
+                                        while ($mostrar = mysqli_fetch_array($result)) {
                                         ?>
-                                        
-                                        <option> <?php echo $mostrar ['costo']  ?>  </option>
-                                    <?php
-                                            }
-                                    ?>
+
+                                            <option> <?php echo $mostrar['costo']  ?> </option>
+                                        <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                                 <h3 style="color: #095a83">Horario:</h3>
@@ -326,20 +332,20 @@
                                     font-size: 17px;
                                     color: #676767;
                                     padding: 0px 25px;
-                                    border: 2px dotted #999;" id="horario" name="horario" >
-                                    <option selected></option>
-                                    <?php
-                                            require_once "conexion.php";
-                                            $conexion=conexion();
-                                            $sql="SELECT DISTINCT * from cursos";
-                                            $result= mysqli_query($conexion,$sql);
-                                            while ($mostrar=mysqli_fetch_array($result)){
+                                    border: 2px dotted #999;" id="horario" name="horario">
+                                        <option selected></option>
+                                        <?php
+                                        require_once "conexion.php";
+
+                                        $sql = "SELECT DISTINCT * from cursos";
+                                        $result = mysqli_query($conexion, $sql);
+                                        while ($mostrar = mysqli_fetch_array($result)) {
                                         ?>
-                                        
-                                        <option> <?php echo $mostrar['dia'].' - de - '.$mostrar ['hora_inicio'].' _a_ '. $mostrar['hora_fin']?></option>
-                                    <?php
-                                            }
-                                    ?>
+
+                                            <option> <?php echo $mostrar['dia'] . ' - de - ' . $mostrar['hora_inicio'] . ' _a_ ' . $mostrar['hora_fin'] ?></option>
+                                        <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
 
@@ -349,121 +355,115 @@
                                 <h1>Datos Personales</h1>
 
                                 <div class="">
-                                <h3 style="color: #095a83">Nombre Completo:</h3>
-                                    <input required type="text" placeholder="Nombre" id="nombre_alumno" name="nombre_alumno" style="border: 2px dotted #999" />
+                                    <h3 style="color: #095a83">Nombre Completo:</h3>
+                                    <input readonly type="text" value="<?php
+                                                                require_once 'conexion.php';
+                                                                $usuario = $_SESSION['usuario'];
+                                                                /* $usuario = 'janet-8a@gmail.com'; */
+                                                                $sql = "SELECT DISTINCT * FROM alumnos WHERE correo='$usuario'";
+                                                                $result = mysqli_query($conexion, $sql);
+                                                                while ($mostrar = mysqli_fetch_array($result)) {
+
+                                                                ?> <?php echo $mostrar['nombre'].' '.$mostrar['apellido'] ?> 
+                                                                <?php
+                                                                    }
+                                                                ?> "id="nombre_alumno" name="nombre_alumno">
                                 </div>
+
+
                                 <div class="">
-                                <h3 style="color: #095a83">Correo Electrónico:</h3>
-                                    <input required type="text" placeholder="Correo" id="correo_alumno" name="correo_alumno"  style="border: 2px dotted #999"/>
+                                    <h3 style="color: #095a83">Correo Electrónico:</h3>
+                                    <!-- <input required type="text" placeholder="Correo" id="correo_alumno" name="correo_alumno"  style="border: 2px dotted #999"/> -->
+                                    <input readonly type="text" value="<?php
+                                                                require_once 'conexion.php';
+                                                                $usuario = $_SESSION['usuario'];
+                                                                /* $usuario = 'janet-8a@gmail.com'; */
+                                                                $sql = "SELECT DISTINCT * FROM alumnos WHERE correo='$usuario'";
+                                                                $result = mysqli_query($conexion, $sql);
+                                                                while ($mostrar = mysqli_fetch_array($result)) {
+
+                                                                ?> <?php echo $mostrar['correo']  ?> 
+                                                                <?php
+                                                                    }
+                                                                ?> "id="correo_alumno" name="correo_alumno">
                                 </div>
                                 <h3 style="color: #095a83">Celular y Telefono Casa:</h3>
                                 <div class="input-group">
-                                    <input required type="number" placeholder="Celular" id="celular_alumno" name="celular_alumno" class="col-lg-6" style="border: 2px dotted #999" />
-                                    <input required type="number" placeholder="Telefono Casa" id="telefono_casa_alumno" name="telefono_casa_alumno"class="col-lg-6" style="border: 2px dotted #999" />
-                                </div>
+                                    <!-- <input required value="" type="number" placeholder="Celular" id="celular_alumno" name="celular_alumno" class="col-lg-6" style="border: 2px dotted #999" />
+                                    <input required type="number" placeholder="Telefono Casa" id="telefono_casa_alumno" name="telefono_casa_alumno"class="col-lg-6" style="border: 2px dotted #999" /> -->
+                                    <input readonly type="text" value="<?php
+                                                                require_once 'conexion.php';
+                                                                $usuario = $_SESSION['usuario'];
+                                                                /* $usuario = 'janet-8a@gmail.com'; */
+                                                                $sql = "SELECT DISTINCT * FROM alumnos WHERE correo='$usuario'";
+                                                                $result = mysqli_query($conexion, $sql);
+                                                                while ($mostrar = mysqli_fetch_array($result)) {
 
-                                <div class="full center">
-                                <h3 style="color: #095a83">¿Procedencia Fes Cuautitlán?:</h3>
-                                </div>
-                                <div class="">
-                                    <select required style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 60px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px;
-                                    border: 2px dotted #999;" id="procedencia" name="procedencia" >
+                                                                ?> <?php echo $mostrar['celular']  ?> 
+                                                                <?php
+                                                                    }
+                                                                ?> "id="celular_alumno" name="celular_alumno">
+                                    <input readonly type="text" value="<?php
+                                                                require_once 'conexion.php';
+                                                                $usuario = $_SESSION['usuario'];
+                                                                /* $usuario = 'janet-8a@gmail.com'; */
+                                                                $sql = "SELECT DISTINCT * FROM alumnos WHERE correo='$usuario'";
+                                                                $result = mysqli_query($conexion, $sql);
+                                                                while ($mostrar = mysqli_fetch_array($result)) {
 
-                                        <option selected></option>
-
-                                        <option value="true">SI</option>
-                                        
-                                        <option value="false">NO</option> 
-                                        </select>
-                                </div>
-                                
-<!--                                 <div class="input-group">
-                                    <label class="col-lg-1" style="font-size: 21px;
-                                    color: #07528d;
-                                    margin-top: 10px;">Si</label>
-                                    <input type="radio" name="radiob" value="false"  class="col-lg-1" style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 30px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px; border: 2px dotted #999;" />
-                                    <label class="col-lg-1" style="font-size: 21px;
-                                    color: #07528d;
-                                    margin-top: 10px;">No</label>
-                                    <input type="radio" name="radiob" value="true" class="col-lg-1" style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 30px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px; border: 2px dotted #999;" />
-                                </div>
- -->
-
-
-                                <div class="">
-                                <h3 style="color: #095a83">Carrera (SOLO FES CUAUTITLÁN):</h3>
-                                    <select disabled style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 60px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px;
-                                    border: 2px dotted #999;" id="carrera" name="carrera" >
-
-                                        <option selected></option>
-
-                                        <option>Informatica</option>
-                                        
-                                        <option>Administración</option>
-                                        
-                                        <option>Contaduria</option>
-                                        
-                                        </select>
+                                                                ?> <?php echo $mostrar['telefono']  ?> 
+                                                                <?php
+                                                                    }
+                                                                ?> "id="telefono_casa_alumno" name="telefono_casa_alumno">
                                 </div>
 
                                 <div class="">
-                                <h3 style="color: #095a83">Numero de Cuenta (SOLO FES CUAUTITLÁN):</h3>
-                                    <input disabled type="number" id="num_cuenta"  name="num_cuenta" placeholder="Numero de Cuenta"  style="border: 2px dotted #999" />
+                                    <h3 style="color: #095a83">Carrera (PROCEDENCIA FES CUAUTITLÁN):</h3>
+                                    <input readonly type="text" value="<?php
+                                                                require_once 'conexion.php';
+                                                                $usuario = $_SESSION['usuario'];
+                                                                /* $usuario = 'janet-8a@gmail.com'; */
+                                                                $sql = "SELECT DISTINCT * FROM alumnos WHERE correo='$usuario'";
+                                                                $result = mysqli_query($conexion, $sql);
+                                                                while ($mostrar = mysqli_fetch_array($result)) {
+
+                                                                ?> <?php echo $mostrar['carrera']  ?> 
+                                                                <?php
+                                                                    }
+                                                                ?> "id="carrera" name="carrera">
                                 </div>
 
                                 <div class="">
-                                <h3 style="color: #095a83">Grado Academico (SOLO EXTERNOS):</h3>
-                                    <select disabled style="width: 100%;
-                                    margin: 15px 0;
-                                    min-height: 60px;
-                                    border: none;
-                                    background: #fff;
-                                    font-size: 17px;
-                                    color: #676767;
-                                    padding: 0px 25px;
-                                    border: 2px dotted #999;" id="grado_academico" name="grado_academico" >
+                                    <h3 style="color: #095a83">Numero de Cuenta (PROCEDENCIA FES CUAUTITLÁN):</h3>
+                                    <!-- <input disabled type="number" id="num_cuenta"  name="num_cuenta" placeholder="Numero de Cuenta"  style="border: 2px dotted #999" /> -->
+                                    <input readonly type="text" value="<?php
+                                                                require_once 'conexion.php';
+                                                                $usuario = $_SESSION['usuario'];
+                                                                /* $usuario = 'janet-8a@gmail.com'; */
+                                                                $sql = "SELECT DISTINCT * FROM alumnos WHERE correo='$usuario'";
+                                                                $result = mysqli_query($conexion, $sql);
+                                                                while ($mostrar = mysqli_fetch_array($result)) {
 
-                                        <option selected></option>
+                                                                ?> <?php echo $mostrar['num_cuenta']  ?> 
+                                                                <?php
+                                                                    }
+                                                                ?> "id="num_cuenta" name="num_cuenta">
+                                </div>
 
-                                        <option>Secundaria</option>
+                                <div class="">
+                                    <h3 style="color: #095a83">Grado Academico (EXTERNOS):</h3>
+                                    <input readonly type="text" value="<?php
+                                                                require_once 'conexion.php';
+                                                                $usuario = $_SESSION['usuario'];
+                                                                /* $usuario = 'janet-8a@gmail.com'; */
+                                                                $sql = "SELECT DISTINCT * FROM alumnos WHERE correo='$usuario'";
+                                                                $result = mysqli_query($conexion, $sql);
+                                                                while ($mostrar = mysqli_fetch_array($result)) {
 
-                                        <option>Preparatoria / Bachillerato</option>
-
-                                        <option>Carrera Tecnica</option>
-                                        
-                                        <option>Licenciatura</option>
-
-                                        <option>Maestria / Posgrado</option>
-                                        
-                                        </select>
+                                                                ?> <?php echo $mostrar['grado_academico']  ?> 
+                                                                <?php
+                                                                    }
+                                                                ?> "id="grado_academico" name="grado_academico">
                                 </div>
 
                                 <div class="full field">
@@ -527,8 +527,7 @@
                     <div class="footer_blog full white_fonts">
                         <h3>Contacto</h3>
                         <ul class="full">
-                            <li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6"
-                                    target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo
+                            <li><img src="images/i5.png" alt="#" /><a href="https://goo.gl/maps/RiEoGue7NJxYxpMN6" target="_blank"><span class="icon"></span><span>Centro de Cómputo primer piso, Campo
                                         Cuatro</span></a></li>
                             <li><img src="images/i6.png"><span>cursos.computo@cuautitlan.unam.mx</span></li>
                             <li><img src="images/i7.png"><span>56-23-18-79</span></li>
@@ -568,22 +567,15 @@
     <script src="js/isotope.min.js"></script>
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
- 
+
     <script>
-    $('#procedencia').on('change', function() { 
-        var desabilitado = (this.value === 'true');
-        $('#grado_academico').prop('disabled', desabilitado); 
-        $('#carrera').prop('disabled', !desabilitado);
-        $('#num_cuenta').prop('disabled', !desabilitado);});                            
+        $('#procedencia').on('change', function() {
+            var desabilitado = (this.value === 'true');
+            $('#grado_academico').prop('disabled', desabilitado);
+            $('#carrera').prop('disabled', !desabilitado);
+            $('#num_cuenta').prop('disabled', !desabilitado);
+        });
     </script>
 </body>
 
 </html>
-
-<!-- <script>
-    $('#procedencia').on('change', function() { 
-        var desabilitado = (this.value === 'true');
-        $('#grado_academico').prop('disabled', desabilitado); 
-        $('#carrera').prop('disabled', !desabilitado);
-        $('#num_cuenta').prop('disabled', !desabilitado);});                            
-    </script> -->
