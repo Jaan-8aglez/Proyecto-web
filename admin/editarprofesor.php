@@ -1,6 +1,5 @@
 <?php
 require_once "../conexion.php";
-$conexion=conexion();
 
 if(isset($_POST['matricula']) && isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['telefono'])){
   

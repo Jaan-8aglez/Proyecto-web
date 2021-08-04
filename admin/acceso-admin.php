@@ -3,7 +3,6 @@
 session_start();
 
 require_once "../conexion.php";
-$conexion=conexion();
 
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];

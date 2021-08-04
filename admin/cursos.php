@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "../conexion.php";
-$conexion=conexion();
 
 $resultado = $conexion->query("select cursos.*, profesores.nombre as profesor
 from cursos inner join profesores on cursos.matricula_profesor = profesores.matricula_profesor")or die ($conexion->error);

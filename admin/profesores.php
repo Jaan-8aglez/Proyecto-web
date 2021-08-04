@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "../conexion.php";
-$conexion=conexion();
 
 $resultado = $conexion->query("SELECT * from profesores")or die ($conexion->error);
 

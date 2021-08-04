@@ -1,6 +1,5 @@
 <?php
 require_once "../conexion.php";
-$conexion=conexion();
 
 if(isset($_POST['nombre']) && isset($_POST['costo']) && isset($_POST['requisitos']) && isset($_POST['horainicio']) && isset($_POST['horafin']) && isset($_POST['dias']) 
 && isset($_POST['grupo']) && isset($_POST['sala']) && isset($_POST['fechainicio']) && isset($_POST['cupo'])  && isset($_POST['profesor']) ){
